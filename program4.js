@@ -1,5 +1,5 @@
 var fs = require('fs');
 
-console.log(fs.readFileSync(process.argv[2]).toString().split('\n').length-1);
-
-
+fs.readFile(process.argv[2], function outputLineCount (error, fileData) {
+	console.log(fileData.toString().split('\n').length-1);
+});
